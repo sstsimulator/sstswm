@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+#SBATCH --nodes=1                    # Number of nodes
+#SBATCH --time=24:0:0
+#SBATCH --exclusive
+
+
+time mpirun -n 1 sst test.py

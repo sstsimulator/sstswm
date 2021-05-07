@@ -1,0 +1,132 @@
+==62781== Memcheck, a memory error detector
+==62781== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==62781== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==62781== Command: /usr/local/module-pkgs/mpi/OpenMPI/openmpi-3.1.5_gcc-4.8.5/bin/orted --hnp --set-sid --report-uri 12 --singleton-died-pipe ==62773== WARNING: valgrind ignores shmget(shmflg) SHM_HUGETLB
+==62773== Conditional jump or move depends on un==62781== 
+==62781== HEAP SUMMARY:
+==62781==     in use at exit: 27,322 bytes in 306 blocks
+==62781==   total heap usage: 34,880 allocs, 34,574 frees, 17,256,941 bytes allocated
+==62781== 
+==62781== LEAK SUMMARY:
+==62781==    definitely lost: 1,415 bytes in 8 blocks
+==62781==    indirectly lost: 7,327 bytes in 133 blocks
+==62781==      possibly lost: 0 bytes in 0 blocks
+==62781==    still reachable: 18,580 bytes in 165 blocks
+==62781==         suppressed: 0 bytes in 0 blocks
+==62781== Rerun with --leak-check=full to see details of leaked memory
+==62781== 
+==62781== For counts of detected and suppressed errors, rerun with: -v
+==62781== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+nt, unsigned long, SST::Params&>::create(unsigned long, SST::Params&) (elementbuilder.h:176)
+==62773==    by 0x4E9D19: SST::Factory::CreateComponent(unsigned long, std::string const&, SST::Params&) (factory.cc:229)
+==62773==    by 0x4FDD14: createComponent (simulation.cc:233)
+==62773==    by 0x4FDD14: SST::Simulation_impl::performWireUp(SST::ConfigGraph&, SST::RankInfo const&, unsigned long) (simulation.cc:458)
+==62773==    by 0x4B580B: do_graph_wireup (main.cc:165)
+==62773==    by 0x4B580B: start_simulation(unsigned int, SimThreadInfo_t&, SST::Core::ThreadSafe::Barrier&) (main.cc:247)
+==62773==    by 0x4A48B8: main (main.cc:695)
+==62773== 
+==62773== Use of uninitialised value of size 8
+==62773==    at 0x71FE26B: _itoa_word (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x72024F0: vfprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x722E028: vsnprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x4CFAB3: std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) (string_conversions.h:95)
+==62773==    by 0x1120B3DD: to_string (basic_string.h:2900)
+==62773==    by 0x1120B3DD: SST::Merlin::hr_router::hr_router(unsigned long, SST::Params&) (hr_router.cc:269)
+==62773==    by 0x112124C4: operator()<long unsigned int, SST::Params&> (elementbuilder.h:152)
+==62773==    by 0x112124C4: SST::ELI::DerivedBuilder<SST::Merlin::hr_router, SST::Component, unsigned long, SST::Params&>::create(unsigned long, SST::Params&) (elementbuilder.h:176)
+==62773==    by 0x4E9D19: SST::Factory::CreateComponent(unsigned long, std::string const&, SST::Params&) (factory.cc:229)
+==62773==    by 0x4FDD14: createComponent (simulation.cc:233)
+==62773==    by 0x4FDD14: SST::Simulation_impl::performWireUp(SST::ConfigGraph&, SST::RankInfo const&, unsigned long) (simulation.cc:458)
+==62773==    by 0x4B580B: do_graph_wireup (main.cc:165)
+==62773==    by 0x4B580B: start_simulation(unsigned int, SimThreadInfo_t&, SST::Core::ThreadSafe::Barrier&) (main.cc:247)
+==62773==    by 0x4A48B8: main (main.cc:695)
+==62773== 
+==62773== Conditional jump or move depends on uninitialised value(s)
+==62773==    at 0x71FE275: _itoa_word (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x72024F0: vfprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x722E028: vsnprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x4CFAB3: std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) (string_conversions.h:95)
+==62773==    by 0x1120B3DD: to_string (basic_string.h:2900)
+==62773==    by 0x1120B3DD: SST::Merlin::hr_router::hr_router(unsigned long, SST::Params&) (hr_router.cc:269)
+==62773==    by 0x112124C4: operator()<long unsigned int, SST::Params&> (elementbuilder.h:152)
+==62773==    by 0x112124C4: SST::ELI::DerivedBuilder<SST::Merlin::hr_router, SST::Component, unsigned long, SST::Params&>::create(unsigned long, SST::Params&) (elementbuilder.h:176)
+==62773==    by 0x4E9D19: SST::Factory::CreateComponent(unsigned long, std::string const&, SST::Params&) (factory.cc:229)
+==62773==    by 0x4FDD14: createComponent (simulation.cc:233)
+==62773==    by 0x4FDD14: SST::Simulation_impl::performWireUp(SST::ConfigGraph&, SST::RankInfo const&, unsigned long) (simulation.cc:458)
+==62773==    by 0x4B580B: do_graph_wireup (main.cc:165)
+==62773==    by 0x4B580B: start_simulation(unsigned int, SimThreadInfo_t&, SST::Core::ThreadSafe::Barrier&) (main.cc:247)
+==62773==    by 0x4A48B8: main (main.cc:695)
+==62773== 
+==62773== Conditional jump or move depends on uninitialised value(s)
+==62773==    at 0x720253F: vfprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x722E028: vsnprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x4CFAB3: std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) (string_conversions.h:95)
+==62773==    by 0x1120B3DD: to_string (basic_string.h:2900)
+==62773==    by 0x1120B3DD: SST::Merlin::hr_router::hr_router(unsigned long, SST::Params&) (hr_router.cc:269)
+==62773==    by 0x112124C4: operator()<long unsigned int, SST::Params&> (elementbuilder.h:152)
+==62773==    by 0x112124C4: SST::ELI::DerivedBuilder<SST::Merlin::hr_router, SST::Component, unsigned long, SST::Params&>::create(unsigned long, SST::Params&) (elementbuilder.h:176)
+==62773==    by 0x4E9D19: SST::Factory::CreateComponent(unsigned long, std::string const&, SST::Params&) (factory.cc:229)
+==62773==    by 0x4FDD14: createComponent (simulation.cc:233)
+==62773==    by 0x4FDD14: SST::Simulation_impl::performWireUp(SST::ConfigGraph&, SST::RankInfo const&, unsigned long) (simulation.cc:458)
+==62773==    by 0x4B580B: do_graph_wireup (main.cc:165)
+==62773==    by 0x4B580B: start_simulation(unsigned int, SimThreadInfo_t&, SST::Core::ThreadSafe::Barrier&) (main.cc:247)
+==62773==    by 0x4A48B8: main (main.cc:695)
+==62773== 
+==62773== Conditional jump or move depends on uninitialised value(s)
+==62773==    at 0x7200C6B: vfprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x722E028: vsnprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x4CFAB3: std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) (string_conversions.h:95)
+==62773==    by 0x1120B3DD: to_string (basic_string.h:2900)
+==62773==    by 0x1120B3DD: SST::Merlin::hr_router::hr_router(unsigned long, SST::Params&) (hr_router.cc:269)
+==62773==    by 0x112124C4: operator()<long unsigned int, SST::Params&> (elementbuilder.h:152)
+==62773==    by 0x112124C4: SST::ELI::DerivedBuilder<SST::Merlin::hr_router, SST::Component, unsigned long, SST::Params&>::create(unsigned long, SST::Params&) (elementbuilder.h:176)
+==62773==    by 0x4E9D19: SST::Factory::CreateComponent(unsigned long, std::string const&, SST::Params&) (factory.cc:229)
+==62773==    by 0x4FDD14: createComponent (simulation.cc:233)
+==62773==    by 0x4FDD14: SST::Simulation_impl::performWireUp(SST::ConfigGraph&, SST::RankInfo const&, unsigned long) (simulation.cc:458)
+==62773==    by 0x4B580B: do_graph_wireup (main.cc:165)
+==62773==    by 0x4B580B: start_simulation(unsigned int, SimThreadInfo_t&, SST::Core::ThreadSafe::Barrier&) (main.cc:247)
+==62773==    by 0x4A48B8: main (main.cc:695)
+==62773== 
+==62773== Conditional jump or move depends on uninitialised value(s)
+==62773==    at 0x7200CEE: vfprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x722E028: vsnprintf (in /usr/lib64/libc-2.17.so)
+==62773==    by 0x4CFAB3: std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) (string_conversions.h:95)
+==62773==    by 0x1120B3DD: to_string (basic_string.h:2900)
+==62773==    by 0x1120B3DD: SST::Merlin::hr_router::hr_router(unsigned long, SST::Params&) (hr_router.cc:269)
+==62773==    by 0x112124C4: operator()<long unsigned int, SST::Params&> (elementbuilder.h:152)
+==62773==    by 0x112124C4: SST::ELI::DerivedBuilder<SST::Merlin::hr_router, SST::Component, unsigned long, SST::Params&>::create(unsigned long, SST::Params&) (elementbuilder.h:176)
+==62773==    by 0x4E9D19: SST::Factory::CreateComponent(unsigned long, std::string const&, SST::Params&) (factory.cc:229)
+==62773==    by 0x4FDD14: createComponent (simulation.cc:233)
+==62773==    by 0x4FDD14: SST::Simulation_impl::performWireUp(SST::ConfigGraph&, SST::RankInfo const&, unsigned long) (simulation.cc:458)
+==62773==    by 0x4B580B: do_graph_wireup (main.cc:165)
+==62773==    by 0x4B580B: start_simulation(unsigned int, SimThreadInfo_t&, SST::Core::ThreadSafe::Barrier&) (main.cc:247)
+==62773==    by 0x4A48B8: main (main.cc:695)
+==62773== 
+==62773== 
+==62773== Process terminating with default action of signal 2 (SIGINT)
+==62773==    at 0x5048F45: pthread_join (in /usr/lib64/libpthread-2.17.so)
+==62773==    by 0x6A49806: __gthread_join (gthr-default.h:668)
+==62773==    by 0x6A49806: std::thread::join() (thread.cc:107)
+==62773==    by 0x4FC668: SST::Simulation_impl::finish() (simulation.cc:703)
+==62773==    by 0x4B5971: start_simulation(unsigned int, SimThreadInfo_t&, SST::Core::ThreadSafe::Barrier&) (main.cc:338)
+==62773==    by 0x4A48B8: main (main.cc:695)
+==62773== 
+==62773== HEAP SUMMARY:
+==62773==     in use at exit: 14,616,201 bytes in 74,371 blocks
+==62773==   total heap usage: 1,623,463 allocs, 1,549,092 frees, 165,663,341 bytes allocated
+==62773== 
+==62773== LEAK SUMMARY:
+==62773==    definitely lost: 51,254 bytes in 270 blocks
+==62773==    indirectly lost: 24,308 bytes in 208 blocks
+==62773==      possibly lost: 1,031,959 bytes in 7,655 blocks
+==62773==    still reachable: 13,508,680 bytes in 66,238 blocks
+==62773==                       of which reachable via heuristic:
+==62773==                         stdstring          : 373,941 bytes in 8,728 blocks
+==62773==                         newarray           : 98,816 bytes in 336 blocks
+==62773==                         multipleinheritance: 37,440 bytes in 72 blocks
+==62773==         suppressed: 0 bytes in 0 blocks
+==62773== Rerun with --leak-check=full to see details of leaked memory
+==62773== 
+==62773== For counts of detected and suppressed errors, rerun with: -v
+==62773== Use --track-origins=yes to see where uninitialised values come from
+==62773== ERROR SUMMARY: 1440 errors from 6 contexts (suppressed: 0 from 0)
